@@ -1,4 +1,4 @@
-package com.example.ginfofx;
+package com.example.ginfofx.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

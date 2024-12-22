@@ -10,9 +10,14 @@ import java.io.IOException;
 public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 620, 540);
-        stage.setTitle("Hello!");
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("accueil.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 700, 600);
+
+        // Appliquer le fichier CSS à la scène
+        scene.getStylesheets().add(getClass().getResource("/com/example/ginfofx/css/accueil.css").toExternalForm());
+
+
+        stage.setTitle("Gestion de Matériel Informatique");
         stage.setScene(scene);
         stage.show();
     }

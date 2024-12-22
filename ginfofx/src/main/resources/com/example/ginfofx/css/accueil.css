@@ -1,0 +1,64 @@
+.root {
+    -fx-background-color: linear-gradient(to bottom, #2C3E50, #4CA1AF);
+}
+
+
+.label {
+    -fx-font-size: 20px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-border-radius: 5;
+    -fx-alignment: center;
+}
+
+.button:hover {
+    -fx-background-color: #2980b9;
+}
+
+.text-field {
+    -fx-pref-width: 250px;
+    -fx-border-color: #3498db;
+    -fx-border-radius: 3;
+    -fx-padding: 5;
+}
+
+.image-view {
+    -fx-fit-width: 300px;
+    -fx-fit-height: 200px;
+    -fx-preserve-ratio: true;
+    -fx-image: url("com/example/ginfofx/img/imgs.png");
+}
+
+/* Style des champs de texte pour le login */
+.text-field, .password-field {
+    -fx-background-color: transparent;
+    -fx-border-radius: 25px;
+    -fx-border-width: 2px;
+    -fx-border-color: #3498db; /* Couleur du bord (bleu clair) */
+    -fx-font-size: 14px;
+    -fx-prompt-text-fill: #aaa; /* Couleur du texte d'invite */
+    -fx-padding: 10px;
+    -fx-background-insets: 0;
+    -fx-text-fill: #ffff; /* Couleur du texte saisi (gris foncé) */
+}
+
+/* Style au focus pour les champs */
+.text-field:focused, .password-field:focused {
+    -fx-border-color: #2980b9; /* Changer la couleur du bord quand le champ est sélectionné */
+}
+
+/* Centrer le formulaire verticalement */
+.form-container {
+    -fx-alignment: center;
+    -fx-spacing: 20px;
+    -fx-padding: 20px;
+    -fx-pref-width: 400px;
+    -fx-pref-height: 400px;
+}
+

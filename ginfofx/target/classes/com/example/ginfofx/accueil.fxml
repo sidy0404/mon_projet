@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<VBox xmlns="http://javafx.com/javafx/8.0.171"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.ginfofx.controller.AccueilController"
+      alignment="TOP_CENTER" spacing="20" prefHeight="400.0" prefWidth="600.0"
+>
+
+    <!-- Label de bienvenue -->
+    <Label text="Bienvenue dans l'application"/>
+
+    <!-- Boutons -->
+    <HBox alignment="CENTER" spacing="20">
+        <Button fx:id="btnLogin" text="Se connecter" onAction="#handleLoginButton"/>
+        <Button fx:id="btnCreateAccount" text="Créer un compte"/>
+    </HBox>
+
+    <!-- Formulaire de connexion caché par défaut -->
+    <VBox fx:id="loginForm" visible="false" styleClass="form-container">
+        <TextField fx:id="usernameField" promptText="Nom d'utilisateur" styleClass="text-field"/>
+        <PasswordField fx:id="passwordField" promptText="Mot de passe" styleClass="password-field"/>
+        <Button text="Connexion" styleClass="button" onAction="#handleSubmitLogin"/>
+    </VBox>
+
+</VBox>
