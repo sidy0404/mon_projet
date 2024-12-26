@@ -1,45 +1,67 @@
 package com.example.ginfofx.controller;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.VBox;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.StackPane;
+
+import java.io.IOException;
+import java.net.URL;
 
 public class AccueilController {
+    @FXML
+    private StackPane contentArea;  // Zone où les formulaires seront chargés dynamiquement
 
     @FXML
-    private VBox loginForm; // Formulaire de connexion
+    private StackPane backgroundImageContainer;
 
     @FXML
-    private Button btnLogin; // Bouton "Se connecter"
+    private ImageView backgroundImage;
 
+/*
     @FXML
-    private Button btnCreateAccount; // Bouton "Créer un compte"
+    public void initialize() {
+        // Charger l'image
+        backgroundImage.setImage(new Image(getClass().getResource("/com/example/ginfofx/img/imgs.png").toExternalForm()));
+    }
+*/
 
-    @FXML
-    private TextField usernameField; // Champ de texte pour le nom d'utilisateur
-
-    @FXML
-    private PasswordField passwordField; // Champ de texte pour le mot de passe
-
-    // Afficher le formulaire de login lorsque l'utilisateur clique sur "Se connecter"
-    @FXML
-    private void handleLoginButton() {
-        loginForm.setVisible(true); // Rendre le formulaire de login visible
+    private void changeView(String fxmlFile) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
+        Parent newView = loader.load();
+        contentArea.getChildren().setAll(newView);
     }
 
-    // Méthode appelée lors du clic sur "Se connecter" dans le formulaire
+    // Charge la vue du formulaire de connexion
     @FXML
-    private void handleSubmitLogin() {
-        String username = usernameField.getText();
-        String password = passwordField.getText();
-
-        // Logique de validation de l'authentification
-        System.out.println("Nom d'utilisateur: " + username);
-        System.out.println("Mot de passe: " + password);
-
-        // Ajouter ici la logique pour valider le login et, par exemple, passer à une autre vue
+    private void loadLoginForm() throws IOException {
+        changeView("/com/example/ginfofx/view/loginForm.fxml");
     }
+
+    // Charge la vue du formulaire d'inscription
+    @FXML
+    private void loadRegisterForm() throws IOException {
+        changeView("/com/example/ginfofx/view/registerForm.fxml");
+    }
+
+    // Méthode générique pour charger une vue dans le contentArea
+    private void loadView(String fxml) {
+        System.out.println("fxml : " + fxml);
+        URL resource = getClass().getResource("/com/example/ginfofx/view/loginForm.fxml");
+        System.out.println("URL du fichier FXML : " + resource);
+
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/ginfofx/view/" + fxml));
+            Node node = loader.load();
+            contentArea.getChildren().setAll(node);
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Impossible de charger la vue : " + fxml);
+        }
+    }
+
+
 }
-

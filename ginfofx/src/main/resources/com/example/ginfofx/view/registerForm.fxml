@@ -12,9 +12,25 @@
 
     <Label text="Créer un compte" styleClass="title-label"/>
 
+    <!-- Champ Nom d'utilisateur -->
     <TextField fx:id="loginField" promptText="Nom d'utilisateur" styleClass="text-field"/>
+
+    <!-- Champ Mot de passe -->
     <PasswordField fx:id="passwordField" promptText="Mot de passe" styleClass="text-field"/>
 
+    <!-- Champ Prénom -->
+    <TextField fx:id="prenom" promptText="Prénom" styleClass="text-field"/>
+
+    <!-- Champ Nom -->
+    <TextField fx:id="nomField" promptText="Nom" styleClass="text-field"/>
+
+    <!-- Champ E-mail -->
+    <TextField fx:id="mail" promptText="E-mail" styleClass="text-field"/>
+
+    <!-- Champ Téléphone -->
+    <TextField fx:id="telephone" promptText="Téléphone" styleClass="text-field"/>
+
+    <!-- Sélection du rôle -->
     <ComboBox fx:id="roleComboBox" promptText="Sélectionnez un rôle" styleClass="combo-box">
         <items>
             <FXCollections fx:factory="observableArrayList">
@@ -25,6 +41,6 @@
         </items>
     </ComboBox>
 
+    <!-- Bouton d'inscription -->
     <Button text="S'inscrire" styleClass="button" onAction="#handleRegister"/>
 </VBox>
-

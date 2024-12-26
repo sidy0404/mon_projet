@@ -1,14 +1,12 @@
 package com.example.ginfofx.controller;
 
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 
 import java.io.IOException;
 
-public class HelloController {
+public class MainAppController {
     private StackPane contentArea;
 
     // Cette méthode sera utilisée pour changer dynamiquement les vues
@@ -20,6 +18,6 @@ public class HelloController {
 
     public void initialize() throws IOException {
         // Par défaut, on charge la page d'accueil
-        changeView("/com/example/ginfofx/view/Accueil.fxml");
+        changeView("/com/example/ginfofx/view/accueil.fxml");
     }
 }

@@ -2,6 +2,7 @@ module com.example.ginfofx {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.sql;
+    requires jbcrypt;
 
 
     opens com.example.ginfofx to javafx.fxml;

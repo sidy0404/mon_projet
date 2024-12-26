@@ -1,102 +1,109 @@
 package com.example.ginfofx.Model;
 
-import java.io.Serial;
 import java.io.Serializable;
 import java.util.UUID;
 
-public class Account implements Serializable {
-    @Serial
-    private static final long serialVersionUID = 1L;
-    private final UUID id;
-    private String prenom;
-    private String nom;
-    private String mail;
-    private String telephone;
-    private String login;
-    private String password;
-    private Role role;
+    public class Account implements Serializable {
+        private String  id = UUID.randomUUID().toString();
+        private String prenom;
+        private String nom;
+        private String mail;
+        private String telephone;
+        private String login;
+        private String password;
+        private Role role;
 
-    public Account(UUID id, String prenom, String nom, String mail, String telephone, String login, String password, Role role) {
-        this.id = UUID.randomUUID();
-        this.prenom = prenom;
-        this.nom = nom;
-        this.mail = mail;
-        this.telephone = telephone;
-        this.login = login;
-        this.password = password;
-        this.role = role;
-    }
+        public Account(String id, String prenom, String nom, String mail, String telephone, String login, String password, Role role) {
+            this.id = (id != null) ? id : UUID.randomUUID().toString();
+            this.prenom = prenom;
+            this.nom = nom;
+            this.mail = mail;
+            this.telephone = telephone;
+            this.login = login;
+            this.password = password;
+            this.role = role;
+        }
 
-    public UUID getId() {
-        return id;
-    }
+        public Account(String prenom, String nom, String mail, String telephone, String login, String password, Role role) {
+            this.prenom = prenom;
+            this.nom = nom;
+            this.mail = mail;
+            this.telephone = telephone;
+            this.login = login;
+            this.password = password;
+            this.role = role;
+        }
 
-    public String getPrenom() {
-        return prenom;
-    }
+        public String getId() {
+            return id;
+        }
 
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
-    }
+        public String getPrenom() {
+            return prenom;
+        }
 
-    public String getNom() {
-        return nom;
-    }
+        public void setPrenom(String prenom) {
+            this.prenom = prenom;
+        }
 
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
+        public String getNom() {
+            return nom;
+        }
 
-    public String getMail() {
-        return mail;
-    }
+        public void setNom(String nom) {
+            this.nom = nom;
+        }
 
-    public void setMail(String mail) {
-        this.mail = mail;
-    }
+        public String getMail() {
+            return mail;
+        }
 
-    public String getTelephone() {
-        return telephone;
-    }
+        public void setMail(String mail) {
+            this.mail = mail;
+        }
 
-    public void setTelephone(String telephone) {
-        this.telephone = telephone;
-    }
+        public String getTelephone() {
+            return telephone;
+        }
 
-    public String getLogin() {
-        return login;
-    }
+        public void setTelephone(String telephone) {
+            this.telephone = telephone;
+        }
 
-    public void setLogin(String login) {
-        this.login = login;
-    }
+        public String getLogin() {
+            return login;
+        }
 
-    public String getPassword() {
-        return password;
-    }
+        public void setLogin(String login) {
+            this.login = login;
+        }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+        public String getPassword() {
+            return password;
+        }
 
-    public Role getRole() {
-        return role;
-    }
+        public void setPassword(String password) {
+            this.password = password;
+        }
 
-    public void setRole(Role role) {
-        this.role = role;
-    }
+        public Role getRole() {
+            return role;
+        }
 
-    @Override
-    public String toString() {
-        return "Account{" +
-                "prenom='" + prenom + '\'' +
-                ", nom='" + nom + '\'' +
-                ", mail='" + mail + '\'' +
-                ", telephone='" + telephone + '\'' +
-                ", login='" + login + '\'' +
-                ", password='" + password + '\'' +
-                ", role=" + role +
-                '}';
+        public void setRole(Role role) {
+            this.role = role;
+        }
+
+        @Override
+        public String toString() {
+            return "Account{" +
+                    "prenom='" + prenom + '\'' +
+                    ", nom='" + nom + '\'' +
+                    ", mail='" + mail + '\'' +
+                    ", telephone='" + telephone + '\'' +
+                    ", login='" + login + '\'' +
+                    ", password='" + password + '\'' +
+                    ", role=" + role +
+                    '}';
+        }
     }
-}
