@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.collections.FXCollections?>
+<VBox xmlns="http://javafx.com/javafx/8.0.171"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.ginfofx.controller.RegisterFormController"
+      spacing="15" alignment="CENTER" prefWidth="400" prefHeight="450">
+
+    <Label text="Créer un compte" styleClass="title-label"/>
+
+    <!-- Champ Nom d'utilisateur -->
+    <TextField fx:id="loginField" promptText="Nom d'utilisateur" styleClass="text-field"/>
+
+    <!-- Champ Mot de passe -->
+    <PasswordField fx:id="passwordField" promptText="Mot de passe" styleClass="text-field"/>
+
+    <!-- Champ Prénom -->
+    <TextField fx:id="prenom" promptText="Prénom" styleClass="text-field"/>
+
+    <!-- Champ Nom -->
+    <TextField fx:id="nomField" promptText="Nom" styleClass="text-field"/>
+
+    <!-- Champ E-mail -->
+    <TextField fx:id="mail" promptText="E-mail" styleClass="text-field"/>
+
+    <!-- Champ Téléphone -->
+    <TextField fx:id="telephone" promptText="Téléphone" styleClass="text-field"/>
+
+    <!-- Sélection du rôle -->
+    <ComboBox fx:id="roleComboBox" promptText="Sélectionnez un rôle" styleClass="combo-box">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="Admin"/>
+                <String fx:value="User"/>
+                <String fx:value="Manager"/>
+            </FXCollections>
+        </items>
+    </ComboBox>
+
+    <!-- Bouton d'inscription -->
+    <Button text="S'inscrire" styleClass="button" onAction="#handleRegister"/>
+</VBox>
